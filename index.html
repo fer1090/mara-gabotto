@@ -69,7 +69,7 @@
         </div>
       </a>
 
-      <!-- NAVEGACIÓN DESKTOP (PANTALLAS MEDIANAS Y GRANDES) -->
+      <!-- NAVEGACIÓN DESKTOP -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-label-md text-xs uppercase tracking-wider text-on-surface-variant font-semibold">
         <a href="#hero" class="hover:text-primary transition-colors">Inicio</a>
         <a href="#servicios" class="hover:text-primary transition-colors">Servicios</a>
@@ -304,7 +304,7 @@
         <button class="filter-chip whitespace-nowrap px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="social">Social & Noche</button>
       </div>
 
-      <!-- Grilla Galería Adaptativa para PC -->
+      <!-- Grilla Galería Adaptativa -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4" id="gallery-container">
         <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Boda de noche" class="w-full h-full object-cover" src="img/novias/novia-real01.jpg"/>
@@ -553,7 +553,7 @@
       <div class="rounded-3xl border border-rose-gold/40 p-6 md:p-10 bg-gradient-to-b from-white to-surface-container-low shadow-[0_8px_30px_rgba(59,22,59,0.07)]">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <!-- Columna Izquierda: Presentación de Agendamiento -->
+          <!-- Columna Izquierda: Presentación -->
           <div class="lg:col-span-5 flex flex-col justify-between h-full">
             <div>
               <div class="flex items-center gap-1.5 mb-2 text-secondary">
@@ -593,14 +593,14 @@
                 </label>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="service-pill-group">
                   <label class="cursor-pointer border border-primary bg-secondary-container/40 p-3 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
-                    <input checked="" class="accent-primary" name="mobile_service" type="radio" value="Novias"/>
+                    <input checked="" class="accent-primary" name="mobile_service" type="radio" value="Novias Haute Couture"/>
                     <div class="flex flex-col">
                       <span class="font-label-md text-xs font-bold text-primary">Novia Real</span>
                       <span class="text-[10px] text-on-surface-variant">Maquillaje de Novia</span>
                     </div>
                   </label>
                   <label class="cursor-pointer border border-outline-variant/60 bg-white p-3 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
-                    <input class="accent-primary" name="mobile_service" type="radio" value="Quinceañeras"/>
+                    <input class="accent-primary" name="mobile_service" type="radio" value="Quinceañeras & Debut"/>
                     <div class="flex flex-col">
                       <span class="font-label-md text-xs font-bold text-primary">Quinceañera</span>
                       <span class="text-[10px] text-on-surface-variant">Cumpleañera</span>
@@ -736,8 +736,8 @@
         </div>
       </div>
 
-      <!-- Tarjeta On-Location -->
-      <div class="mt-6 p-5 sm:p-6 rounded-2xl bg-white border border-rose-gold/30 shadow-sm max-w-2xl mx-auto flex items-center justify-between gap-4">
+      <!-- Tarjeta On-Location Modificada -->
+      <div class="mt-6 p-5 sm:p-6 rounded-2xl bg-white border border-rose-gold/30 shadow-sm max-w-2xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div class="flex items-center gap-3">
           <span class="material-symbols-outlined text-primary text-2xl">storefront</span>
           <div>
@@ -745,10 +745,27 @@
             <span class="text-xs text-on-surface-variant">Servicio de Maquillaje Profesional a Domicilio</span>
           </div>
         </div>
-        <span class="flex items-center gap-1.5 text-xs text-on-surface-variant font-body-sm hidden sm:flex">
-          <span class="material-symbols-outlined text-xs text-secondary">call</span>
-          Atención por WhatsApp & Instagram
-        </span>
+
+        <!-- 3 Líneas de Redes y WhatsApp -->
+        <div class="flex flex-col items-start sm:items-end gap-1.5 text-xs text-on-surface-variant font-body-sm w-full sm:w-auto border-t sm:border-t-0 border-rose-gold/20 pt-3 sm:pt-0">
+          
+          <!-- Línea 1: WhatsApp -->
+          <a href="https://wa.me/5493813734312" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors">
+            <svg class="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.483 1.332 5.003l-1.417 5.176 5.295-1.388c1.464.798 3.113 1.218 4.776 1.219h.004c5.505 0 9.988-4.478 9.99-9.984 0-2.667-1.039-5.175-2.929-7.065-1.89-1.89-4.398-2.93-7.065-2.931zm0 1.662c4.588 0 8.326 3.738 8.327 8.326 0 2.227-.867 4.321-2.445 5.898-1.577 1.577-3.67 2.444-5.895 2.444h-.003c-1.463 0-2.899-.393-4.154-1.137l-.298-.177-3.088.81.824-3.01-.194-.309c-.818-1.303-1.251-2.812-1.251-4.355 0-4.588 3.738-8.29 8.327-8.290zm-3.606 4.39c-.201 0-.441.077-.671.325-.231.248-.883.863-.883 2.105 0 1.242.904 2.442 1.03 2.61.126.168 1.748 2.723 4.28 3.791.602.254 1.072.406 1.439.52.605.188 1.156.161 1.591.097.485-.072 1.492-.61 1.701-1.2 0.209-.59.209-1.096.146-1.202-.063-.106-.231-.169-.482-.294s-1.492-.736-1.723-.82c-.231-.084-.399-.126-.567.126-.168.252-.651.82-.798.988-.147.168-.294.189-.545.063-.252-.126-1.063-.392-2.024-1.249-.748-.667-1.253-1.491-1.4-1.743-.147-.252-.016-.388.11-.513.113-.113.252-.294.378-.441.126-.147.168-.252.252-.42.084-.168.042-.315-.021-.441-.063-.126-.567-1.365-.777-1.87-.204-.492-.412-.425-.567-.433-.142-.007-.305-.008-.468-.008z"/></svg>
+            <span class="font-semibold">+543813734312</span>
+          </a>
+
+          <!-- Línea 2: Instagram -->
+          <a href="https://instagram.com/gabotto.mara" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-on-surface hover:text-primary transition-colors">
+            <svg class="w-4 h-4 fill-current text-[#E4405F]" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span class="font-semibold">@gabotto.mara</span>
+          </a>
+
+          <!-- Línea 3: Texto aclaratorio -->
+          <span class="text-[10px] text-secondary uppercase tracking-widest font-bold mt-0.5">
+            Buscanos en Redes Sociales
+          </span>
+        </div>
       </div>
     </section>
 
@@ -847,7 +864,7 @@
       const tel = document.getElementById('mob-tel').value;
       const notes = document.getElementById('mob-notes').value;
 
-      const phone = "5493814734312"; 
+      const phone = "5493813734312"; 
 
       const message = `✨ *SOLICITUD DE CITA - MARA GABOTTO* ✨\n\n` +
         `👤 *Nombre:* ${name}\n` +
