@@ -56,42 +56,47 @@
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-primary min-h-screen">
 
-  <!-- HEADER FIJO CON LOGO OFICIAL -->
+  <!-- HEADER FIJO -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-[#fbf9f5]/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_2px_12px_rgba(59,22,59,0.04)]">
-    <div class="px-4 h-16 max-w-2xl mx-auto flex items-center justify-between">
+    <div class="px-4 sm:px-6 lg:px-8 h-16 sm:h-20 max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- LOGO OFICIAL (ISOTIPO + TIPOGRAFÍA) -->
-      <a class="flex items-center gap-2.5 group active:opacity-80 transition-opacity" href="#">
-        <!-- ISOTIPO "M" CON PINCELADA EN SVG -->
-        <img src="img/isotipo-m.png" alt="M" class="w-12 h-12 object-contain rounded-full"/>
-        
+      <!-- LOGO OFICIAL -->
+      <a class="flex items-center gap-2.5 sm:gap-3 group active:opacity-80 transition-opacity" href="#">
+        <img src="img/isotipo-m.png" alt="M" class="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full"/>
         <div class="flex flex-col">
-          <span class="font-body-lg text-base font-bold text-primary tracking-tight leading-none uppercase">Mara Gabotto</span>
-          <span class="font-label-md text-[8.5px] uppercase tracking-widest text-secondary font-semibold mt-0.5">Make-UP Artist & Cosmetology</span>
+          <span class="font-body-lg text-sm sm:text-base font-bold text-primary tracking-tight leading-none uppercase">Mara Gabotto</span>
+          <span class="font-label-md text-[8px] sm:text-[9px] uppercase tracking-widest text-secondary font-semibold mt-0.5">Make-UP Artist & Cosmetology</span>
         </div>
       </a>
 
-      <div class="flex items-center gap-2">
-        <a class="inline-flex items-center justify-center px-3.5 py-1.5 bg-[#3b163b] text-white font-label-md text-[15px] font-semibold tracking-wider uppercase rounded-full shadow-sm active:scale-95 transition-all" href="#agendar">
+      <!-- NAVEGACIÓN DESKTOP (PANTALLAS MEDIANAS Y GRANDES) -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-label-md text-xs uppercase tracking-wider text-on-surface-variant font-semibold">
+        <a href="#hero" class="hover:text-primary transition-colors">Inicio</a>
+        <a href="#servicios" class="hover:text-primary transition-colors">Servicios</a>
+        <a href="#portafolio" class="hover:text-primary transition-colors">Portafolio</a>
+        <a href="#faq" class="hover:text-primary transition-colors">Preguntas</a>
+        <a href="#testimonios" class="hover:text-primary transition-colors">Testimonios</a>
+      </nav>
+
+      <!-- BOTÓN AGENDAR Y MENÚ MÓVIL -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a class="inline-flex items-center justify-center px-4 py-2 bg-[#3b163b] text-white font-label-md text-xs sm:text-sm font-semibold tracking-wider uppercase rounded-full shadow-sm hover:bg-primary-container active:scale-95 transition-all" href="#agendar">
           Agendar
         </a>
-        <button aria-label="Abrir menú" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-low text-primary active:bg-surface-container-high transition-colors" id="mobile-menu-btn">
+        <button aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-primary active:bg-surface-container-high transition-colors" id="mobile-menu-btn">
           <span class="material-symbols-outlined text-[22px]">menu</span>
         </button>
       </div>
     </div>
 
-    <!-- MENÚ DESPLEGABLE -->
-    <div class="hidden fixed inset-x-0 top-16 bg-[#fbf9f5] border-b border-outline-variant/40 shadow-xl px-5 py-5 transition-all max-w-2xl mx-auto" id="mobile-drawer">
+    <!-- MENÚ DESPLEGABLE MÓVIL -->
+    <div class="hidden md:hidden fixed inset-x-0 top-16 bg-[#fbf9f5] border-b border-outline-variant/40 shadow-xl px-5 py-5 transition-all" id="mobile-drawer">
       <nav class="flex flex-col gap-3 font-label-lg text-sm tracking-wide uppercase text-on-surface">
         <a class="mobile-nav-link py-2 border-b border-surface-container-high/60 text-primary font-bold flex items-center justify-between" href="#hero">
           Inicio <span class="material-symbols-outlined text-xs">arrow_forward_ios</span>
         </a>
         <a class="mobile-nav-link py-2 border-b border-surface-container-high/60 text-on-surface-variant flex items-center justify-between" href="#servicios">
           Servicios Exclusivos <span class="material-symbols-outlined text-xs">arrow_forward_ios</span>
-        </a>
-        <a class="mobile-nav-link py-2 border-b border-surface-container-high/60 text-on-surface-variant flex items-center justify-between" href="#transformaciones">
-          Antes & Después <span class="material-symbols-outlined text-xs">arrow_forward_ios</span>
         </a>
         <a class="mobile-nav-link py-2 border-b border-surface-container-high/60 text-on-surface-variant flex items-center justify-between" href="#portafolio">
           Galería & Portafolio <span class="material-symbols-outlined text-xs">arrow_forward_ios</span>
@@ -106,414 +111,428 @@
     </div>
   </header>
 
-  <main class="w-full pt-16 max-w-2xl mx-auto overflow-hidden">
+  <main class="w-full pt-16 sm:pt-20 max-w-7xl mx-auto overflow-hidden px-4 sm:px-6 lg:px-8">
 
     <!-- SECCIÓN 1: HERO -->
-    <section class="relative px-4 pt-6 pb-8 overflow-hidden" id="hero">
-      <div class="absolute -top-10 right-0 w-64 h-64 bg-secondary-container/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div class="absolute top-48 -left-12 w-60 h-60 bg-rose-gold-light/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <section class="relative pt-6 sm:pt-10 md:pt-16 pb-8 md:pb-16 overflow-hidden" id="hero">
+      <div class="absolute -top-10 right-0 w-64 md:w-96 h-64 md:h-96 bg-secondary-container/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute top-48 -left-12 w-60 md:w-80 h-60 md:h-80 bg-rose-gold-light/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
       
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/70 border border-secondary/20 mb-3">
-        <span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">spa</span>
-        <span class="font-label-md text-[10px] tracking-widest uppercase font-semibold text-primary">SERVICIO DE MAQUILLAJE A DOMICILIO</span>
-      </div>
-
-      <h1 class="font-display-hero text-[31px] leading-[1.18] text-primary tracking-tight font-medium mb-3">
-        El arte de resaltar tu belleza auténtica en tus momentos más memorables.
-      </h1>
-      <p class="font-body-md text-[14px] leading-relaxed text-on-surface-variant mb-5">
-        Maquillaje de alta costura para novias y galas sociales combinado con protocolos dermatológicos clínicos de cosmetología avanzada.
-      </p>
-
-      <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(59,22,59,0.18)] ring-1 ring-rose-gold/50 mb-5 aspect-[4/5] bg-surface-container">
-        <img alt="Novia Real por Mara Gabotto" class="w-full h-full object-cover" src="img/novias/novia-real01.jpg"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        
-        <!-- INSIGNIA CON ISOTIPO M -->
-        <div class="absolute top-3 left-3 bg-[#fbf9f5]/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm flex items-center gap-2 border border-white/60">
-          <img src="img/isotipo-m.png" alt="M" class="w-4 h-4 object-contain rounded-full"/>
-          <span class="font-label-md text-[10px] uppercase tracking-wider text-primary font-bold">SERVICIO DE NOVIA</span>
-        </div>
-
-        <div class="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg border border-rose-gold/30 flex items-center justify-between">
-          <div>
-            <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold block">Colección Nupcial</span>
-            <p class="font-headline-sm text-sm font-semibold text-primary">Maquillaje de Novia Pulido, Definido y Sofisticado</p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Texto Izquierda -->
+        <div class="lg:col-span-7 flex flex-col items-start">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/70 border border-secondary/20 mb-3 sm:mb-4">
+            <span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">spa</span>
+            <span class="font-label-md text-[10px] sm:text-xs tracking-widest uppercase font-semibold text-primary">SERVICIO DE MAQUILLAJE A DOMICILIO</span>
           </div>
-          <span class="material-symbols-outlined text-rose-gold text-lg">verified</span>
-        </div>
-      </div>
 
-      <div class="flex flex-col gap-2.5 w-full mb-6">
-        <a class="w-full py-3.5 px-5 bg-[#3b163b] text-white rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-[0_6px_20px_rgba(59,22,59,0.22)] active:scale-[0.98] transition-all" href="#agendar">
-          <span class="material-symbols-outlined text-base">calendar_month</span>
-          Agendar Cita Privada
-        </a>
-        <a class="w-full py-3.5 px-5 bg-surface-container text-primary rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 border border-outline-variant/40 active:bg-surface-container-high transition-colors" href="#portafolio">
-          Explorar Portafolio
-        </a>
-      </div>
+          <h1 class="font-display-hero text-[31px] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.18] text-primary tracking-tight font-medium mb-3 sm:mb-4">
+            El arte de resaltar tu belleza auténtica en tus momentos más memorables.
+          </h1>
+          <p class="font-body-md text-sm md:text-base leading-relaxed text-on-surface-variant mb-6 max-w-2xl">
+            Maquillaje de alta costura para novias y galas sociales combinado con protocolos dermatológicos clínicos de cosmetología avanzada.
+          </p>
 
-      <div class="grid grid-cols-3 gap-2 bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/30 text-center shadow-sm">
-        <div class="flex flex-col">
-          <span class="font-headline-md text-lg font-bold text-primary">+50</span>
-          <span class="font-body-sm text-[10px] text-on-surface-variant font-medium leading-tight">Novias Felices</span>
+          <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mb-8">
+            <a class="py-3.5 px-6 bg-[#3b163b] text-white rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-[0_6px_20px_rgba(59,22,59,0.22)] hover:bg-primary-container active:scale-[0.98] transition-all" href="#agendar">
+              <span class="material-symbols-outlined text-base">calendar_month</span>
+              Agendar Cita Privada
+            </a>
+            <a class="py-3.5 px-6 bg-surface-container text-primary rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 border border-outline-variant/40 active:bg-surface-container-high hover:bg-surface-container-high transition-colors" href="#portafolio">
+              Explorar Portafolio
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 sm:gap-4 w-full bg-surface-container-lowest p-3 sm:p-4 rounded-xl border border-outline-variant/30 text-center shadow-sm">
+            <div class="flex flex-col">
+              <span class="font-headline-md text-lg sm:text-2xl font-bold text-primary">+50</span>
+              <span class="font-body-sm text-[10px] sm:text-xs text-on-surface-variant font-medium leading-tight">Novias Felices</span>
+            </div>
+            <div class="flex flex-col border-x border-surface-container">
+              <span class="font-headline-md text-lg sm:text-2xl font-bold text-primary">18+</span>
+              <span class="font-body-sm text-[10px] sm:text-xs text-on-surface-variant font-medium leading-tight">Años Trayectoria</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline-md text-lg sm:text-2xl font-bold text-primary">16h</span>
+              <span class="font-body-sm text-[10px] sm:text-xs text-on-surface-variant font-medium leading-tight">Fijación HD</span>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col border-x border-surface-container">
-          <span class="font-headline-md text-lg font-bold text-primary">18+</span>
-          <span class="font-body-sm text-[10px] text-on-surface-variant font-medium leading-tight">Años Trayectoria</span>
-        </div>
-        <div class="flex flex-col">
-          <span class="font-headline-md text-lg font-bold text-primary">16h</span>
-          <span class="font-body-sm text-[10px] text-on-surface-variant font-medium leading-tight">Fijación HD</span>
+
+        <!-- Foto Derecha -->
+        <div class="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none">
+          <div class="relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(59,22,59,0.18)] ring-1 ring-rose-gold/50 aspect-[4/5] bg-surface-container">
+            <img alt="Novia Real por Mara Gabotto" class="w-full h-full object-cover" src="img/novias/novia-real01.jpg"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+            
+            <div class="absolute top-3 left-3 bg-[#fbf9f5]/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm flex items-center gap-2 border border-white/60">
+              <img src="img/isotipo-m.png" alt="M" class="w-4 h-4 object-contain rounded-full"/>
+              <span class="font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">SERVICIO DE NOVIA</span>
+            </div>
+
+            <div class="absolute bottom-3 inset-x-3 bg-white/95 backdrop-blur-md p-3 sm:p-4 rounded-xl shadow-lg border border-rose-gold/30 flex items-center justify-between">
+              <div>
+                <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold block">Colección Nupcial</span>
+                <p class="font-headline-sm text-xs sm:text-sm font-semibold text-primary">Maquillaje de Novia Pulido, Definido y Sofisticado</p>
+              </div>
+              <span class="material-symbols-outlined text-rose-gold text-lg sm:text-xl">verified</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SECCIÓN 2: BRAND MANIFESTO CON LOGO COMPLETO -->
-    <section class="w-full bg-[#f3ede6]/60 border-y border-rose-gold/20 py-8 px-4">
-      <div class="flex flex-col items-center text-center gap-4">
+    <section class="w-full bg-[#f3ede6]/60 rounded-3xl border border-rose-gold/20 py-8 md:py-12 px-4 sm:px-8 my-6">
+      <div class="max-w-4xl mx-auto flex flex-col items-center text-center gap-4">
         
-        <!-- LOGOTIPO VECTORIAL COMPLETO DE MARA GABOTTO -->
-        <div class="w-64 max-w-full py-2">
+        <div class="w-64 sm:w-80 max-w-full py-2">
           <img src="img/logo-completo.png" alt="Mara Gabotto Make-UP Artist & Cosmetology" class="w-full h-auto object-contain"/>
         </div>
 
-        <p class="font-headline-md italic text-[15px] leading-snug text-primary font-medium px-2">
+        <p class="font-headline-md italic text-base sm:text-lg md:text-xl leading-snug text-primary font-medium px-2">
           “La simbiosis perfecta entre el arte nupcial de pasarela y la ciencia del cuidado dermatológico preparatorio.”
         </p>
         <div class="flex items-center gap-1.5 text-secondary">
-          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
-          <span class="font-label-md text-[10px] uppercase tracking-widest font-bold">Certificación en Cosmetología</span>
+          <span class="material-symbols-outlined text-sm sm:text-base" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+          <span class="font-label-md text-xs uppercase tracking-widest font-bold">Certificación en Cosmetología</span>
         </div>
 
-        <div class="pt-4 border-t border-rose-gold/20 w-full mt-1">
-          <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold block mb-2.5">Uso de Marcas de Alta Gama</span>
-          <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs font-semibold text-primary/80">
-            <span class="px-3 py-1 bg-white rounded-md border border-rose-gold/30 shadow-2xs">Yves Saint Laurent</span>
-            <span class="px-3 py-1 bg-white rounded-md border border-rose-gold/30 shadow-2xs">Dior</span>
-            <span class="px-3 py-1 bg-white rounded-md border border-rose-gold/30 shadow-2xs">MAC</span>
-            <span class="px-3 py-1 bg-white rounded-md border border-rose-gold/30 shadow-2xs">Guerlain</span>
+        <div class="pt-6 border-t border-rose-gold/20 w-full mt-2">
+          <span class="text-xs uppercase tracking-widest text-on-surface-variant font-bold block mb-3">Uso de Marcas de Alta Gama</span>
+          <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-semibold text-primary/80">
+            <span class="px-3.5 py-1.5 bg-white rounded-lg border border-rose-gold/30 shadow-2xs">Yves Saint Laurent</span>
+            <span class="px-3.5 py-1.5 bg-white rounded-lg border border-rose-gold/30 shadow-2xs">Dior</span>
+            <span class="px-3.5 py-1.5 bg-white rounded-lg border border-rose-gold/30 shadow-2xs">MAC</span>
+            <span class="px-3.5 py-1.5 bg-white rounded-lg border border-rose-gold/30 shadow-2xs">Guerlain</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECCIÓN 3: SERVICIOS EXCLUSIVOS -->
-    <section class="py-8 px-4" id="servicios">
-      <div class="mb-5">
-        <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Servicios a Domicilio</span>
-        <h2 class="font-headline-lg text-2xl font-semibold text-primary mt-1">Servicios Exclusivos</h2>
-        <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
+    <section class="py-8 md:py-12" id="servicios">
+      <div class="mb-6 md:mb-8 text-center md:text-left">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Servicios a Domicilio</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl font-semibold text-primary mt-1">Servicios Exclusivos</h2>
+        <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed max-w-2xl">
           Experiencias de belleza personalizadas adaptadas a la estructura de tu rostro y tipo de piel.
         </p>
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col">
-          <div class="relative h-44 w-full rounded-xl overflow-hidden mb-3 bg-surface-container">
-            <img alt="Novias Haute Couture" class="w-full h-full object-cover" src="img/novias/novia-real02.jpg"/>
-            <span class="absolute top-2.5 right-2.5 bg-[#3b163b] text-white text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">Exclusivo Boda</span>
+        <div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-5 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="relative h-48 sm:h-52 w-full rounded-xl overflow-hidden mb-4 bg-surface-container">
+              <img alt="Novias Haute Couture" class="w-full h-full object-cover" src="img/novias/novia-real02.jpg"/>
+              <span class="absolute top-2.5 right-2.5 bg-[#3b163b] text-white text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">Exclusivo Boda</span>
+            </div>
+            <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Protocolo Integral</span>
+            <h3 class="font-headline-sm text-lg sm:text-xl font-semibold text-primary mt-0.5">Novias Alta Costura</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Prueba de visagismo 1 a 1, diseño de piel de porcelana a prueba de lágrimas, atención en el lugar del gran día y kit de retoque de lujo.
+            </p>
           </div>
-          <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Protocolo Integral</span>
-          <h3 class="font-headline-sm text-lg font-semibold text-primary mt-0.5">Novias Alta Costura</h3>
-          <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-            Prueba de visagismo 1 a 1, diseño de piel de porcelana a prueba de lágrimas, atención en el lugar del gran día y kit de retoque de lujo.
-          </p>
-          <div class="pt-3 mt-3 border-t border-surface-container-high flex items-center justify-between">
+          <div class="pt-4 mt-4 border-t border-surface-container-high flex items-center justify-between">
             <span class="font-headline-sm text-sm font-bold text-primary">Consultar Cotización</span>
-            <a class="px-3 py-1.5 bg-primary text-white rounded-lg text-[11px] font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 active:scale-95 transition-transform" href="#agendar">
+            <a class="px-3.5 py-2 bg-primary text-white rounded-lg text-xs font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all" href="#agendar">
               Reservar <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col">
-          <div class="relative h-44 w-full rounded-xl overflow-hidden mb-3 bg-surface-container">
-            <img alt="Quinceañeras" class="w-full h-full object-cover object-[center_35%]" style="object-position: center 35%;" src="img/quinceañeras/quinceañera-real01.jpg"/>
-            <span class="absolute top-2.5 right-2.5 bg-secondary-container text-primary font-bold text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">XV Años</span>
+        <div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-5 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="relative h-48 sm:h-52 w-full rounded-xl overflow-hidden mb-4 bg-surface-container">
+              <img alt="Quinceañeras" class="w-full h-full object-cover object-[center_35%]" style="object-position: center 35%;" src="img/quinceañeras/quinceañera-real01.jpg"/>
+              <span class="absolute top-2.5 right-2.5 bg-secondary-container text-primary font-bold text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">XV Años</span>
+            </div>
+            <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Celebración</span>
+            <h3 class="font-headline-sm text-lg sm:text-xl font-semibold text-primary mt-0.5">Quinceañeras</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Estilismo fresco, luminoso y ultra resistente para fotografía 4K. Cejas orgánicas, iluminación satinada y pestañas a medida.
+            </p>
           </div>
-          <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Celebración</span>
-          <h3 class="font-headline-sm text-lg font-semibold text-primary mt-0.5">Quinceañeras</h3>
-          <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-            Estilismo fresco, luminoso y ultra resistente para fotografía 4K. Cejas orgánicas, iluminación satinada y pestañas a medida.
-          </p>
-          <div class="pt-3 mt-3 border-t border-surface-container-high flex items-center justify-between">
+          <div class="pt-4 mt-4 border-t border-surface-container-high flex items-center justify-between">
             <span class="font-headline-sm text-sm font-bold text-primary">Consultar Cotización</span>
-            <a class="px-3 py-1.5 bg-primary text-white rounded-lg text-[11px] font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 active:scale-95 transition-transform" href="#agendar">
-              Reservar <span class="material-symbols-outlined text-xs">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col">
-          <div class="relative h-44 w-full rounded-xl overflow-hidden mb-3 bg-surface-container">
-            <img alt="Social Glamour" class="w-full h-full object-cover" src="img/social/social-glamour01.jpg"/>
-            <span class="absolute top-2.5 right-2.5 bg-surface-container-highest text-primary font-semibold text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">Red Carpet</span>
-          </div>
-          <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Eventos de Noche</span>
-          <h3 class="font-headline-sm text-lg font-semibold text-primary mt-0.5">Maquillaje Social & Gala</h3>
-          <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
-            Smoky eyes refinado en tonos pasteles, micro-iluminación escultórica y labios satinados de larga fijación para madrinas e invitadas VIP.
-          </p>
-          <div class="pt-3 mt-3 border-t border-surface-container-high flex items-center justify-between">
-            <span class="font-headline-sm text-sm font-bold text-primary">Consultar Cotización</span>
-            <a class="px-3 py-1.5 bg-primary text-white rounded-lg text-[11px] font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 active:scale-95 transition-transform" href="#agendar">
+            <a class="px-3.5 py-2 bg-primary text-white rounded-lg text-xs font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all" href="#agendar">
               Reservar <span class="material-symbols-outlined text-xs">arrow_forward</span>
             </a>
           </div>
         </div>
 
+        <!-- Card 3 -->
+        <div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-5 shadow-[0_4px_16px_rgba(59,22,59,0.06)] border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div>
+            <div class="relative h-48 sm:h-52 w-full rounded-xl overflow-hidden mb-4 bg-surface-container">
+              <img alt="Social Glamour" class="w-full h-full object-cover" src="img/social/social-glamour01.jpg"/>
+              <span class="absolute top-2.5 right-2.5 bg-surface-container-highest text-primary font-semibold text-[10px] font-label-md uppercase tracking-wider px-2.5 py-0.5 rounded-full">Red Carpet</span>
+            </div>
+            <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Eventos de Noche</span>
+            <h3 class="font-headline-sm text-lg sm:text-xl font-semibold text-primary mt-0.5">Maquillaje Social & Gala</h3>
+            <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+              Smoky eyes refinado en tonos pasteles, micro-iluminación escultórica y labios satinados de larga fijación para madrinas e invitadas VIP.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-surface-container-high flex items-center justify-between">
+            <span class="font-headline-sm text-sm font-bold text-primary">Consultar Cotización</span>
+            <a class="px-3.5 py-2 bg-primary text-white rounded-lg text-xs font-label-md uppercase tracking-wider font-semibold flex items-center gap-1 hover:bg-primary-container active:scale-95 transition-all" href="#agendar">
+              Reservar <span class="material-symbols-outlined text-xs">arrow_forward</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     
     <!-- SECCIÓN 4: GALERÍA CON LIGHTBOX -->
-    <section class="py-8 bg-surface-container-low/60 border-t border-outline-variant/30" id="portafolio">
-      <div class="px-4 mb-4">
-        <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Obras & Looks</span>
-        <h2 class="font-headline-lg text-2xl font-semibold text-primary mt-1">Galería de Arte</h2>
-        <p class="font-body-sm text-xs text-on-surface-variant mt-0.5">
-          Toca cualquier imagen para desplegar el look en tamaño completo.
+    <section class="py-8 md:py-12 bg-surface-container-low/60 rounded-3xl border border-outline-variant/30 px-4 sm:px-6 my-6" id="portafolio">
+      <div class="mb-6 text-center">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Obras & Looks</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl font-semibold text-primary mt-1">Galería de Arte</h2>
+        <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-1">
+          Toca o haz clic en cualquier imagen para desplegar el look en tamaño completo.
         </p>
       </div>
 
-      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-4 pb-2 mb-4" id="portfolio-chips">
-        <button class="filter-chip whitespace-nowrap px-3.5 py-1.5 rounded-full text-[11px] font-label-md uppercase tracking-wider font-semibold bg-[#3b163b] text-white shadow-sm transition-all" data-cat="all">Todos</button>
-        <button class="filter-chip whitespace-nowrap px-3.5 py-1.5 rounded-full text-[11px] font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="novias">Novias Reales</button>
-        <button class="filter-chip whitespace-nowrap px-3.5 py-1.5 rounded-full text-[11px] font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="quince">Quinceañeras</button>
-        <button class="filter-chip whitespace-nowrap px-3.5 py-1.5 rounded-full text-[11px] font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="social">Social & Noche</button>
+      <!-- Filtros -->
+      <div class="flex items-center justify-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-6" id="portfolio-chips">
+        <button class="filter-chip whitespace-nowrap px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-semibold bg-[#3b163b] text-white shadow-sm transition-all" data-cat="all">Todos</button>
+        <button class="filter-chip whitespace-nowrap px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="novias">Novias Reales</button>
+        <button class="filter-chip whitespace-nowrap px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="quince">Quinceañeras</button>
+        <button class="filter-chip whitespace-nowrap px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-semibold bg-white text-on-surface-variant border border-outline-variant/50 transition-all" data-cat="social">Social & Noche</button>
       </div>
 
-      <div class="grid grid-cols-2 gap-2.5 px-4" id="gallery-container">
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+      <!-- Grilla Galería Adaptativa para PC -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4" id="gallery-container">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Boda de noche" class="w-full h-full object-cover" src="img/novias/novia-real01.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Boda de noche</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Boda de noche" class="w-full h-full object-cover" src="img/novias/novia-real06.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Boda de noche</span>
           </div>
         </div>
         
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Novia Glam" class="w-full h-full object-cover" src="img/novias/novia-real02.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Novia Glam</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Novia Glam" class="w-full h-full object-cover" src="img/novias/novia-real13.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Novia Glam</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Novia en la puerta de la iglesia" class="w-full h-full object-cover" src="img/novias/novia-real03.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Novia en la puerta de la iglesia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Novia en la puerta de la iglesia" class="w-full h-full object-cover" src="img/novias/novia-real04.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Novia en la puerta de la iglesia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Novios" class="w-full h-full object-cover" src="img/novias/novia-real05.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Novios</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real07.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real08.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real09.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
         
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real10.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real11.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="novias" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="novias" onclick="openLightbox(this)">
           <img alt="Preparacion de novia" class="w-full h-full object-cover" src="img/novias/novia-real12.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Novias</span>
             <span class="font-headline-sm text-xs text-white font-medium">Preparacion de novia</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour01.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour02.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour03.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour04.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour05.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour06.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour07.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour08.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour09.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour10.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="social" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="social" onclick="openLightbox(this)">
           <img alt="Smoky & Diamonds" class="w-full h-full object-cover" src="img/social/social-glamour11.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">Gala</span>
             <span class="font-headline-sm text-xs text-white font-medium">Smoky & Diamonds</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="quince" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="quince" onclick="openLightbox(this)">
           <img alt="Cumpleañera" class="w-full h-full object-cover" src="img/quinceañeras/quinceañera-real01.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">XV Años</span>
             <span class="font-headline-sm text-xs text-white font-medium">Cumpleañera</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="quince" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="quince" onclick="openLightbox(this)">
           <img alt="Cumpleañera" class="w-full h-full object-cover" src="img/quinceañeras/quinceañera-real02.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">XV Años</span>
             <span class="font-headline-sm text-xs text-white font-medium">Cumpleañera</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="quince" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="quince" onclick="openLightbox(this)">
           <img alt="Cumpleañera" class="w-full h-full object-cover" src="img/quinceañeras/quinceañera-real03.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">XV Años</span>
             <span class="font-headline-sm text-xs text-white font-medium">Cumpleañera</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="quince" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="quince" onclick="openLightbox(this)">
           <img alt="Cumpleañera" class="w-full h-full object-cover" src="img/quinceañeras/quinceañera-real04.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">XV Años</span>
             <span class="font-headline-sm text-xs text-white font-medium">Cumpleañera</span>
           </div>
         </div>
 
-        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5" data-filter="quince" onclick="openLightbox(this)">
+        <div class="gallery-card cursor-pointer group relative overflow-hidden rounded-xl bg-surface shadow-sm aspect-[4/5] ring-1 ring-black/5 hover:scale-[1.02] transition-transform" data-filter="quince" onclick="openLightbox(this)">
           <img alt="Cumpleañera" class="w-full h-full object-cover" src="img/quinceañeras/quinceañera-real05.jpg"/>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-2.5 flex flex-col justify-end">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-90 p-3 flex flex-col justify-end">
             <span class="text-[9px] uppercase tracking-wider text-rose-gold font-bold">XV Años</span>
             <span class="font-headline-sm text-xs text-white font-medium">Cumpleañera</span>
           </div>
@@ -524,209 +543,236 @@
 
     <!-- LIGHTBOX MODAL -->
     <div class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-4 flex flex-col items-center justify-center" id="lightbox-modal">
-      <button class="absolute top-4 right-4 text-white text-3xl font-bold p-2" onclick="closeLightbox()">&times;</button>
-      <img alt="Enlarged look" class="max-h-[75vh] max-w-full rounded-lg object-contain mb-3" id="lightbox-img" src=""/>
-      <p class="text-white text-sm font-headline-sm text-center" id="lightbox-caption"></p>
+      <button class="absolute top-4 right-4 text-white text-3xl font-bold p-2 hover:opacity-80" onclick="closeLightbox()">&times;</button>
+      <img alt="Enlarged look" class="max-h-[75vh] md:max-h-[85vh] max-w-full rounded-lg object-contain mb-3" id="lightbox-img" src=""/>
+      <p class="text-white text-sm md:text-base font-headline-sm text-center" id="lightbox-caption"></p>
     </div>
 
     <!-- SECCIÓN 5: AGENDAMIENTO DIRECTO A WHATSAPP -->
-    <section class="py-8 px-4 bg-surface-container-lowest" id="agendar">
-      <div class="rounded-2xl border border-rose-gold/40 p-4 bg-gradient-to-b from-white to-surface-container-low shadow-[0_8px_30px_rgba(59,22,59,0.07)]">
-        <div class="flex items-center gap-1.5 mb-1 text-secondary">
-          <span class="w-2 h-2 rounded-full bg-secondary"></span>
-          <span class="font-label-md text-[10px] uppercase tracking-widest font-bold">Reserva Directa</span>
+    <section class="py-8 md:py-12" id="agendar">
+      <div class="rounded-3xl border border-rose-gold/40 p-6 md:p-10 bg-gradient-to-b from-white to-surface-container-low shadow-[0_8px_30px_rgba(59,22,59,0.07)]">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <!-- Columna Izquierda: Presentación de Agendamiento -->
+          <div class="lg:col-span-5 flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center gap-1.5 mb-2 text-secondary">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                <span class="font-label-md text-xs uppercase tracking-widest font-bold">Reserva Directa</span>
+              </div>
+              <h2 class="font-headline-lg text-2xl sm:text-3xl md:text-4xl font-semibold text-primary">Agenda tu Cita</h2>
+              <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                Completa los datos de tu evento y serás redirigida automáticamente a WhatsApp con tu solicitud formateada.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-rose-gold/20 flex flex-col gap-3">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary text-lg mt-0.5">verified_user</span>
+                <div>
+                  <h4 class="font-label-md text-xs font-bold text-primary">Confirmación Prioritaria</h4>
+                  <p class="text-xs text-on-surface-variant">Te responderemos en el menor tiempo posible para confirmar disponibilidad de fecha.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary text-lg mt-0.5">location_on</span>
+                <div>
+                  <h4 class="font-label-md text-xs font-bold text-primary">Servicio a Domicilio (On-Location)</h4>
+                  <p class="text-xs text-on-surface-variant">Nos trasladamos a tu domicilio o lugar de preparación con kit profesional de iluminación.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Formulario -->
+          <div class="lg:col-span-7 w-full">
+            <form class="flex flex-col gap-4" id="mobile-booking-form" onsubmit="sendWhatsAppBooking(event)">
+              <div>
+                <label class="block font-label-md text-xs uppercase tracking-widest text-primary font-bold mb-2">
+                  1. Selecciona Servicio
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="service-pill-group">
+                  <label class="cursor-pointer border border-primary bg-secondary-container/40 p-3 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
+                    <input checked="" class="accent-primary" name="mobile_service" type="radio" value="Novias"/>
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-xs font-bold text-primary">Novia Real</span>
+                      <span class="text-[10px] text-on-surface-variant">Maquillaje de Novia</span>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer border border-outline-variant/60 bg-white p-3 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
+                    <input class="accent-primary" name="mobile_service" type="radio" value="Quinceañeras"/>
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-xs font-bold text-primary">Quinceañera</span>
+                      <span class="text-[10px] text-on-surface-variant">Cumpleañera</span>
+                    </div>
+                  </label>
+                  <label class="cursor-pointer border border-outline-variant/60 bg-white p-3 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
+                    <input class="accent-primary" name="mobile_service" type="radio" value="Maquillaje Social & Gala"/>
+                    <div class="flex flex-col">
+                      <span class="font-label-md text-xs font-bold text-primary">Social Gala</span>
+                      <span class="text-[10px] text-on-surface-variant">Noche & Cóctel</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-date">Fecha Deseada</label>
+                  <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs sm:text-sm font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-date" required="" type="date"/>
+                </div>
+                <div>
+                  <label class="block font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-slot">Horario Deseado</label>
+                  <select class="w-full h-11 px-2.5 bg-surface-container rounded-xl text-xs sm:text-sm font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-slot">
+                    <option value="Mañana (09:00 - 12:00)">Mañana (09:00 - 12:00)</option>
+                    <option value="Mediodía (12:00 - 15:00)">Mediodía (12:00 - 15:00)</option>
+                    <option value="Tarde (15:00 - 19:00)">Tarde (15:00 - 19:00)</option>
+                    <option value="Horario Especial Boda">Horario Especial Boda</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-name">Tu Nombre Completo</label>
+                  <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs sm:text-sm font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-name" placeholder="Ej. Valentina Herrera" required="" type="text"/>
+                </div>
+                <div>
+                  <label class="block font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-tel">Teléfono / WhatsApp</label>
+                  <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs sm:text-sm font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-tel" placeholder="+54 9 381 ..." required="" type="tel"/>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-label-md text-[10px] sm:text-xs uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-notes">Detalles del Evento o Piel</label>
+                <textarea class="w-full p-3 bg-surface-container rounded-xl text-xs sm:text-sm font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-notes" placeholder="Lugar del evento, tipo de piel o cantidad de acompañantes..." rows="3"></textarea>
+              </div>
+
+              <button class="w-full h-12 bg-[#3b163b] text-white rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-[0_6px_20px_rgba(59,22,59,0.25)] hover:bg-primary-container active:scale-[0.98] transition-all" type="submit">
+                <span class="material-symbols-outlined text-base">chat</span>
+                Enviar Solicitud a WhatsApp
+              </button>
+            </form>
+          </div>
         </div>
-        <h2 class="font-headline-lg text-2xl font-semibold text-primary">Agenda tu Cita</h2>
-        <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
-          Completa los datos y serás redirigida a WhatsApp con tu solicitud formateada.
-        </p>
 
-        <form class="mt-5 flex flex-col gap-4" id="mobile-booking-form" onsubmit="sendWhatsAppBooking(event)">
-          <div>
-            <label class="block font-label-md text-[11px] uppercase tracking-widest text-primary font-bold mb-2">
-              1. Selecciona Servicio
-            </label>
-            <div class="grid grid-cols-2 gap-2" id="service-pill-group">
-              <label class="cursor-pointer border border-primary bg-secondary-container/40 p-2.5 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
-                <input checked="" class="accent-primary" name="mobile_service" type="radio" value="Novias Haute Couture"/>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-xs font-bold text-primary">Novia Real</span>
-                  <span class="text-[10px] text-on-surface-variant">Maquillaje de Novia</span>
-                </div>
-              </label>
-              <label class="cursor-pointer border border-outline-variant/60 bg-white p-2.5 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
-                <input class="accent-primary" name="mobile_service" type="radio" value="Quinceañeras & Debut"/>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-xs font-bold text-primary">Quinceañera</span>
-                  <span class="text-[10px] text-on-surface-variant">Maquillaje Cumpleañera</span>
-                </div>
-              </label>
-              <label class="cursor-pointer border border-outline-variant/60 bg-white p-2.5 rounded-xl flex items-center gap-2 select-none text-left transition-all service-label">
-                <input class="accent-primary" name="mobile_service" type="radio" value="Maquillaje Social & Gala"/>
-                <div class="flex flex-col">
-                  <span class="font-label-md text-xs font-bold text-primary">Social Gala</span>
-                  <span class="text-[10px] text-on-surface-variant">Noche & Cóctel</span>
-                </div>
-              </label>
-              
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-2">
-            <div>
-              <label class="block font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-date">Fecha</label>
-              <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-date" required="" type="date"/>
-            </div>
-            <div>
-              <label class="block font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-slot">Horario Deseado</label>
-              <select class="w-full h-11 px-2.5 bg-surface-container rounded-xl text-xs font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-slot">
-                <option value="Mañana (09:00 - 12:00)">Mañana (09 - 12)</option>
-                <option value="Mediodía (12:00 - 15:00)">Mediodía (12 - 15)</option>
-                <option value="Tarde (15:00 - 19:00)">Tarde (15 - 19)</option>
-                <option value="Horario Especial Boda">Horario de Boda</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-name">Tu Nombre Completo</label>
-            <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none mb-2.5" id="mob-name" placeholder="Ej. Valentina Herrera" required="" type="text"/>
-            
-            <label class="block font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-tel">Teléfono / WhatsApp</label>
-            <input class="w-full h-11 px-3 bg-surface-container rounded-xl text-xs font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-tel" placeholder="+54 9 381 ..." required="" type="tel"/>
-          </div>
-
-          <div>
-            <label class="block font-label-md text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-1" for="mob-notes">Detalles del Evento o Piel</label>
-            <textarea class="w-full p-3 bg-surface-container rounded-xl text-xs font-body-md text-on-surface border border-transparent focus:border-secondary focus:bg-white focus:outline-none" id="mob-notes" placeholder="Lugar del evento, tipo de piel o cantidad de acompañantes..." rows="2"></textarea>
-          </div>
-
-          <button class="w-full h-12 bg-[#3b163b] text-white rounded-xl font-label-lg text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-[0_6px_20px_rgba(59,22,59,0.25)] active:scale-[0.98] transition-all" type="submit">
-            <span class="material-symbols-outlined text-base">chat</span>
-            Enviar Solicitud a WhatsApp
-          </button>
-          
-          <p class="text-center font-body-sm text-[11px] text-on-surface-variant flex items-center justify-center gap-1">
-            <span class="material-symbols-outlined text-xs text-secondary">verified_user</span>
-            Te responderemos lo antes posible.
-          </p>
-        </form>
       </div>
     </section>
 
     <!-- SECCIÓN: FAQ ACCORDION -->
-    <section class="py-8 px-4 bg-surface-container-low/50 border-t border-outline-variant/30" id="faq">
-      <div class="mb-5">
-        <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Dudas Habituales</span>
-        <h2 class="font-headline-lg text-2xl font-semibold text-primary mt-1">Preguntas Frecuentes</h2>
+    <section class="py-8 md:py-12 bg-surface-container-low/50 rounded-3xl border border-outline-variant/30 px-4 sm:px-8 my-6" id="faq">
+      <div class="mb-6 text-center">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Dudas Habituales</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl font-semibold text-primary mt-1">Preguntas Frecuentes</h2>
       </div>
 
-      <div class="flex flex-col gap-2.5">
-        <details class="group bg-white p-3.5 rounded-xl border border-outline-variant/30 shadow-sm transition-all">
-          <summary class="flex justify-between items-center cursor-pointer font-headline-sm text-xs font-bold text-primary list-none">
+      <div class="max-w-3xl mx-auto flex flex-col gap-3">
+        <details class="group bg-white p-4 rounded-xl border border-outline-variant/30 shadow-sm transition-all">
+          <summary class="flex justify-between items-center cursor-pointer font-headline-sm text-xs sm:text-sm font-bold text-primary list-none">
             ¿Con cuánta anticipación debo reservar mi fecha?
             <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
           </summary>
-          <p class="font-body-sm text-xs text-on-surface-variant mt-2 leading-relaxed">
+          <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
             Para Novias se recomienda reservar entre 3 a 6 meses antes. Para servicios sociales y graduaciones, de 2 a 4 semanas de anticipación.
           </p>
         </details>
 
-        <details class="group bg-white p-3.5 rounded-xl border border-outline-variant/30 shadow-sm transition-all">
-          <summary class="flex justify-between items-center cursor-pointer font-headline-sm text-xs font-bold text-primary list-none">
+        <details class="group bg-white p-4 rounded-xl border border-outline-variant/30 shadow-sm transition-all">
+          <summary class="flex justify-between items-center cursor-pointer font-headline-sm text-xs sm:text-sm font-bold text-primary list-none">
             ¿Realizas atención a domicilio (On-Location)?
             <span class="material-symbols-outlined text-sm group-open:rotate-180 transition-transform">expand_more</span>
           </summary>
-          <p class="font-body-sm text-xs text-on-surface-variant mt-2 leading-relaxed">
+          <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
             Sí, nos trasladamos al hotel, quinta o residencia donde te prepares el día del evento con nuestro kit profesional e iluminación propia.
           </p>
         </details>
-
       </div>
     </section>
 
     <!-- SECCIÓN 6: TESTIMONIOS Y ATELIER -->
-    <section class="py-8 px-4 bg-surface-container-low/40" id="testimonios">
-      <div class="mb-4 text-center">
-        <span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">Experiencias Reales</span>
-        <h2 class="font-headline-lg text-2xl font-semibold text-primary mt-1">Palabras de Quienes Confiaron</h2>
+    <section class="py-8 md:py-12" id="testimonios">
+      <div class="mb-6 md:mb-8 text-center">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Experiencias Reales</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl font-semibold text-primary mt-1">Palabras de Quienes Confiaron</h2>
       </div>
 
-      <div class="flex flex-col gap-3">
-        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm">
-          <div class="flex items-center gap-0.5 text-secondary mb-1.5">
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          </div>
-          <p class="font-body-sm text-xs text-on-surface-variant italic leading-relaxed">
-            “Mara logró una piel luminosa que no pesaba nada y aguantó 16 horas de baile y lágrimas. Mi mejor decisión para el día de mi boda.”
-          </p>
-          <div class="mt-3 pt-2.5 border-t border-surface-container flex items-center justify-between">
-            <span class="font-label-md text-xs font-bold text-primary">Sofía Castellanos</span>
-            <span class="text-[10px] text-secondary font-medium">Novia Real</span>
-          </div>
-        </div>
-
-        <div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-sm">
-          <div class="flex items-center gap-0.5 text-secondary mb-1.5">
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-          </div>
-          <p class="font-body-sm text-xs text-on-surface-variant italic leading-relaxed">
-            “La preparación facial previa marcó una diferencia abismal. La textura del poro desapareció. Su trato es sumamente cálido y profesional.”
-          </p>
-          <div class="mt-3 pt-2.5 border-t border-surface-container flex items-center justify-between">
-            <span class="font-label-md text-xs font-bold text-primary">Valeria Ramos</span>
-            <span class="text-[10px] text-secondary font-medium">Cliente Gala & Social</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-5 p-4 rounded-2xl bg-white border border-rose-gold/30 shadow-sm flex flex-col gap-2.5">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-xl">storefront</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
           <div>
-            <h4 class="font-headline-sm text-sm font-bold text-primary">On-Location</h4>
-            <span class="text-[11px] text-on-surface-variant">Servicio a Domicilio</span>
+            <div class="flex items-center gap-0.5 text-secondary mb-2">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant italic leading-relaxed">
+              “Mara logró una piel luminosa que no pesaba nada y aguantó 16 horas de baile y lágrimas. Mi mejor decisión para el día de mi boda.”
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+            <span class="font-label-md text-xs sm:text-sm font-bold text-primary">Sofía Castellanos</span>
+            <span class="text-xs text-secondary font-medium">Novia Real</span>
           </div>
         </div>
-        <div class="flex flex-col gap-1 text-[11px] text-on-surface-variant font-body-sm pt-1">
-          
-          <span class="flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-xs text-secondary">call</span>
-            Atención Directa por WhatsApp & Instagrm
-          </span>
+
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-0.5 text-secondary mb-2">
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-sm text-xs sm:text-sm text-on-surface-variant italic leading-relaxed">
+              “La preparación facial previa marcó una diferencia abismal. La textura del poro desapareció. Su trato es sumamente cálido y profesional.”
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+            <span class="font-label-md text-xs sm:text-sm font-bold text-primary">Valeria Ramos</span>
+            <span class="text-xs text-secondary font-medium">Cliente Gala & Social</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Tarjeta On-Location -->
+      <div class="mt-6 p-5 sm:p-6 rounded-2xl bg-white border border-rose-gold/30 shadow-sm max-w-2xl mx-auto flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-2xl">storefront</span>
+          <div>
+            <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">On-Location</h4>
+            <span class="text-xs text-on-surface-variant">Servicio de Maquillaje Profesional a Domicilio</span>
+          </div>
+        </div>
+        <span class="flex items-center gap-1.5 text-xs text-on-surface-variant font-body-sm hidden sm:flex">
+          <span class="material-symbols-outlined text-xs text-secondary">call</span>
+          Atención por WhatsApp & Instagram
+        </span>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full max-w-2xl mx-auto bg-surface-container-high/60 border-t border-outline-variant/30 py-6 px-4 text-center">
+  <footer class="w-full max-w-7xl mx-auto bg-surface-container-high/60 border-t border-outline-variant/30 py-8 px-4 sm:px-6 lg:px-8 text-center mt-8">
     <div class="flex flex-col items-center gap-2 mb-4">
-      
-      <!-- ISOTIPO Sello M en Footer -->
-      <div class="w-16 h-16 mx-auto flex-shrink-0 flex items-center justify-center bg-white rounded-full p-2 border border-rose-gold/40 shadow-sm mb-0.5">
+      <div class="w-16 h-16 mx-auto flex-shrink-0 flex items-center justify-center bg-white rounded-full p-2 border border-rose-gold/40 shadow-sm mb-1">
         <img src="img/isotipo-m.png" alt="M" class="w-full h-full object-contain rounded-full"/>
       </div>
       <div class="w-48 mx-auto max-w-full py-0.5">
         <img src="img/logo-completo.png" alt="Mara Gabotto Make-UP Artist & Cosmetology" class="w-full h-auto object-contain"/>
       </div>
     </div>
-    <div class="flex justify-center gap-4 text-xs font-label-md uppercase tracking-wider text-secondary mb-4">
-      <a class="hover:text-primary" href="#hero">Inicio</a>
-      <a class="hover:text-primary" href="#servicios">Servicios</a>
-      <a class="hover:text-primary" href="#portafolio">Portafolio</a>
-      <a class="hover:text-primary" href="#agendar">Contacto</a>
+    
+    <div class="flex justify-center gap-6 text-xs font-label-md uppercase tracking-wider text-secondary mb-4">
+      <a class="hover:text-primary transition-colors" href="#hero">Inicio</a>
+      <a class="hover:text-primary transition-colors" href="#servicios">Servicios</a>
+      <a class="hover:text-primary transition-colors" href="#portafolio">Portafolio</a>
+      <a class="hover:text-primary transition-colors" href="#agendar">Contacto</a>
     </div>
-    <p class="text-[10px] text-on-surface-variant/80 font-body-sm">
+    
+    <p class="text-[10px] sm:text-xs text-on-surface-variant/80 font-body-sm">
       © 2026 Mara Gabotto. Todos los derechos reservados.
     </p>
   </footer>
@@ -777,7 +823,7 @@
       });
     });
 
-    // 5. Lightbox para Galería
+    // 4. Lightbox para Galería
     function openLightbox(element) {
       const img = element.querySelector('img');
       const caption = element.querySelector('.font-headline-sm');
@@ -790,7 +836,7 @@
       document.getElementById('lightbox-modal').classList.add('hidden');
     }
 
-    // 6. Integración Directa de Agendamiento con WhatsApp
+    // 5. Integración Directa de Agendamiento con WhatsApp
     function sendWhatsAppBooking(event) {
       event.preventDefault();
 
@@ -801,7 +847,7 @@
       const tel = document.getElementById('mob-tel').value;
       const notes = document.getElementById('mob-notes').value;
 
-      const phone = "5493814734312"; // Reemplazar por el número real de WhatsApp
+      const phone = "5493814734312"; 
 
       const message = `✨ *SOLICITUD DE CITA - MARA GABOTTO* ✨\n\n` +
         `👤 *Nombre:* ${name}\n` +
